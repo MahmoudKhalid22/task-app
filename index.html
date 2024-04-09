@@ -18,10 +18,10 @@
   <body>
     <div class="h-screen overflow-hidden bg-gray-100 flex flex-col">
       <main
-        class="flex flex-col md:flex-row justify-between md:justify-center h-screen"
+        class="flex flex-col md:flex-row justify-between md:justify-center h-screen w-screen"
         x-data
       >
-        <div class="">
+        <div class="md:flex-1">
           <div class="p-6 w-full flex flex-col">
             <span x-text="$store.notes.current.title"></span>
 
@@ -164,7 +164,7 @@
             console.log(id);
             const note = this.data.find((item) => item.id === id);
             if (note) {
-              note.completed = true;
+              note.completed = !note.completed;
             }
           },
 
